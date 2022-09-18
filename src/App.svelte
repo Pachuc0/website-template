@@ -1,6 +1,11 @@
 <script>
   import devLogo from './assets/dev-logo.svg'
   import Counter from './lib/Counter.svelte'
+  var audio = new Audio("CLE_Reverse_Fx_5.wav");
+  console.log(audio);
+  function playsound(){
+    audio.play();
+  }
 </script>
 
 <main>
@@ -9,11 +14,14 @@
       <img src={devLogo} class="logo dev" alt="Svelte Logo" />
     </a>
   </div>
-  <h1>Svelte Website Template</h1>
+  <h1>Pachuco's Sound Website</h1>
 
   <div class="card">
     <Counter />
   </div>
+  <button on:click={playsound}>
+    play
+  </button>
 </main>
 
 <style>
@@ -29,5 +37,8 @@
 
   .logo.dev:hover {
     filter: drop-shadow(0 0 2em #1E6CFF);
+  }
+  button{
+    background-color: rebeccapurple;
   }
 </style>
